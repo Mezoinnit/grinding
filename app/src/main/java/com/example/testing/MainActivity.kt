@@ -236,6 +236,7 @@ fun BirthCard(msg: Message) {
     }
 }
 
+//background testing
 @Composable
 fun ImagePrev(){
     val brightness = -40f
@@ -246,7 +247,7 @@ fun ImagePrev(){
         0f, 0f, 0f, 1f, 0f
     )
     Box {
-        val image = painterResource(id = R.drawable.ic_launcher_background)
+        val image = painterResource(id = R.drawable.ic_launcher_foreground)
         Image(painter = image, contentDescription = null,
             colorFilter = ColorFilter.colorMatrix(ColorMatrix(colorMatrix)),
         modifier = Modifier
@@ -259,4 +260,10 @@ fun ImagePrev(){
     }
 }
 
-// line added
+@Preview(showBackground = true)
+@Composable
+fun GreetingPreview() {
+    TestingTheme {
+        Practice()
+    }
+}
