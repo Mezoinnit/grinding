@@ -108,9 +108,7 @@ fun Practice(){
     var i by remember {
         mutableStateOf(1)
     }
-    var blurred by remember {
-        mutableStateOf(1)
-    }
+    var blurred = 1
 
     Column(verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.padding(12.dp)) {
@@ -252,14 +250,5 @@ fun ImagePrev(){
             edgeTreatment = BlurredEdgeTreatment.Unbounded
         ).fillMaxSize(), contentScale = ContentScale.Crop)
     }
-    BirthCard(msg = Message("Shana <3", "Me2o"))
 }
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    TestingTheme {
-        BirthCard(msg = Message("Me2o", "Jana"))
-//        Practice()
-    }
-}
