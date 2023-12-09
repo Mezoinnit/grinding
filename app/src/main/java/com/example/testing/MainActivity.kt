@@ -206,7 +206,7 @@ fun BirthCard(msg: Message) {
                 Alignment.TopStart
             )
             .padding(0.dp, 48.dp, 0.dp, 0.dp)) {
-            Image(painter = painterResource(id = R.drawable.bae), contentDescription = null,
+            Image(painter = painterResource(id = R.drawable.ic_launcher_foreground), contentDescription = null,
                 modifier = Modifier
                     .clip(shape = CircleShape)
                     .size(200.dp)
@@ -236,7 +236,6 @@ fun BirthCard(msg: Message) {
     }
 }
 
-//background testing
 @Composable
 fun ImagePrev(){
     val brightness = -40f
@@ -247,7 +246,7 @@ fun ImagePrev(){
         0f, 0f, 0f, 1f, 0f
     )
     Box {
-        val image = painterResource(id = R.drawable.ic_launcher_foreground)
+        val image = painterResource(id = R.drawable.ic_launcher_background)
         Image(painter = image, contentDescription = null,
             colorFilter = ColorFilter.colorMatrix(ColorMatrix(colorMatrix)),
         modifier = Modifier
@@ -260,10 +259,3 @@ fun ImagePrev(){
     }
 }
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    TestingTheme {
-        Practice()
-    }
-}
