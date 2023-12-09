@@ -69,8 +69,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    ImagePrev()
-//                    Practice()
+//                    ImagePrev()
+                    Practice()
                 }
             }
         }
@@ -108,7 +108,9 @@ fun Practice(){
     var i by remember {
         mutableStateOf(1)
     }
-    var blurred = 1
+    var blurred by remember {
+        mutableStateOf(1)
+    }
 
     Column(verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.padding(12.dp)) {
@@ -199,8 +201,11 @@ fun BirthCard(msg: Message) {
             .fillMaxSize()
             .padding(48.dp),
     ) {
-        Row(horizontalArrangement = Arrangement.Start, modifier = Modifier.align(
-            Alignment.TopStart).padding(0.dp, 48.dp, 0.dp, 0.dp)) {
+        Row(horizontalArrangement = Arrangement.Start, modifier = Modifier
+            .align(
+                Alignment.TopStart
+            )
+            .padding(0.dp, 48.dp, 0.dp, 0.dp)) {
             Image(painter = painterResource(id = R.drawable.bae), contentDescription = null,
                 modifier = Modifier
                     .clip(shape = CircleShape)
@@ -231,6 +236,7 @@ fun BirthCard(msg: Message) {
     }
 }
 
+//background testing
 @Composable
 fun ImagePrev(){
     val brightness = -40f
@@ -241,14 +247,23 @@ fun ImagePrev(){
         0f, 0f, 0f, 1f, 0f
     )
     Box {
-        val image = painterResource(id = R.drawable.bae2)
+        val image = painterResource(id = R.drawable.ic_launcher_foreground)
         Image(painter = image, contentDescription = null,
             colorFilter = ColorFilter.colorMatrix(ColorMatrix(colorMatrix)),
-        modifier = Modifier.blur(
-            radiusX = 32.dp,
-            radiusY = 1.dp,
-            edgeTreatment = BlurredEdgeTreatment.Unbounded
-        ).fillMaxSize(), contentScale = ContentScale.Crop)
+        modifier = Modifier
+            .blur(
+                radiusX = 32.dp,
+                radiusY = 1.dp,
+                edgeTreatment = BlurredEdgeTreatment.Unbounded
+            )
+            .fillMaxSize(), contentScale = ContentScale.Crop)
     }
 }
 
+@Preview(showBackground = true)
+@Composable
+fun GreetingPreview() {
+    TestingTheme {
+        Practice()
+    }
+}
